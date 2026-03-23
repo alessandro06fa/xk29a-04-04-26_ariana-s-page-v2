@@ -21,15 +21,12 @@ window.location.href="pagina.html"
 }
 
 function actualizarContador(){
-
+const cumple = new Date("March 29, 2026 00:00:00 GMT-0500")
 const ahora = new Date()
 
-const cumple = new Date("April 4, 2026 00:00:00 GMT-0500")
-const comeback = new Date("March 21, 2026 06:00:00 GMT-0500")
 
 actualizar("contador1",cumple,"cumple")
 actualizarBarra(cumple)
-actualizar("contador2",comeback)
 
 }
 
@@ -45,6 +42,12 @@ if(tipo==="cumple"){
 document.getElementById("mensajeCumple").innerText="FELIZ CUMPLEAÑOS ARIANAAAAAAAAAAAAAAAAA"
 
 document.getElementById("gifCumple").innerHTML='<img src="images/cumple.gif">'
+
+// MOSTRAR BOTÓN
+const btn = document.getElementById("btnSorpresa")
+if(btn){
+btn.style.display = "inline-block"
+}
 
 }
 
@@ -81,7 +84,8 @@ const playlist = [
 "music/song8.mp3",
 "music/song9.mp3",
 "music/song10.mp3",
-"music/song11.mp3"
+"music/song11.mp3",
+"music/song12.mp3"
 ]
 
 const bgMusic = new Audio()
@@ -158,3 +162,14 @@ if(porcentaje>100) porcentaje=100
 
 document.getElementById("barraProgreso").style.width = porcentaje+"%"
 
+document.addEventListener("DOMContentLoaded", () => {
+
+const btnSorpresa = document.getElementById("btnSorpresa")
+
+if(btnSorpresa){
+btnSorpresa.onclick = () => {
+window.location.href = "adviento.html"
+}
+}
+
+})
