@@ -1,0 +1,76 @@
+body{
+margin:0;
+font-family:sans-serif;
+background:linear-gradient(#021421,#000814);
+color:white;
+text-align:center;
+overflow:hidden;
+}
+
+.titulo{
+margin-top:40px;
+font-size:28px;
+text-shadow:0 0 15px #00eaff;
+}
+
+.calendario{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+padding:40px;
+max-width:500px;
+margin:auto;
+}
+
+.cofre{
+background:linear-gradient(145deg,#0a2a3a,#021421);
+border-radius:15px;
+padding:30px;
+cursor:pointer;
+box-shadow:0 0 15px rgba(0,200,255,0.3);
+transition:0.3s;
+}
+
+.cofre:hover{
+transform:scale(1.08);
+box-shadow:0 0 25px #00eaff;
+}
+
+.bloqueado{
+opacity:0.2;
+pointer-events:none;
+}
+
+.activo{
+box-shadow:0 0 25px #00eaff, 0 0 50px #00eaff;
+}
+
+.abierto{
+background:linear-gradient(145deg,#00bfff,#004e7a);
+box-shadow:0 0 30px cyan;
+}
+
+.defectuoso{
+background:#111;
+color:#777;
+}
+
+/* RESPONSIVE */
+@media(max-width:700px){
+
+.calendario{
+grid-template-columns:repeat(2,1fr);
+padding:20px;
+gap:15px;
+}
+
+.cofre{
+padding:20px;
+font-size:18px;
+}
+
+.titulo{
+font-size:20px;
+}
+
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sorpresa</title>
+
+<style>
+body{
+margin:0;
+background:#021421;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+#contenido{
+display:flex;
+justify-content:center;
+align-items:center;
+width:100%;
+}
+
+img{
+width:min(800px, 80vw);
+border-radius:10px;
+box-shadow:0 0 20px cyan;
+padding:10px;
+background:#022c43;
+display:block;
+margin:auto;
+}
+
+iframe{
+width:90vw;
+height:90vh;
+border:none;
+border-radius:10px;
+box-shadow:0 0 20px cyan;
+}
+</style>
+
+</head>
+
+<body>
+
+<div id="contenido"></div>
+
+<script>
+const params = new URLSearchParams(window.location.search)
+const file = params.get("file")
+
+const cont = document.getElementById("contenido")
+
+if(file.endsWith(".png") || file.endsWith(".jpg")){
+cont.innerHTML = `<img src="${file}">`
+}else{
+cont.innerHTML = `<iframe src="${file}"></iframe>`
+}
+</script>
+
+</body>
+</html>
