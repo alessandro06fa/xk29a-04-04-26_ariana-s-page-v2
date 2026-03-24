@@ -1,3 +1,4 @@
+const fechaBoton = new Date("March 28, 2026 00:00:00 GMT-0500")
 const btn = document.getElementById("enterBtn")
 
 if(btn){
@@ -21,9 +22,14 @@ window.location.href="pagina.html"
 }
 
 function actualizarContador(){
-const cumple = new Date("March 29, 2026 00:00:00 GMT-0500")
+const cumple = new Date("April 04, 2026 00:00:00 GMT-0500")
 const ahora = new Date()
 
+// 👉 mostrar botón desde el 28
+const btn = document.getElementById("btnSorpresa")
+if(btn && ahora >= fechaBoton){
+btn.style.display = "inline-block"
+}
 
 actualizar("contador1",cumple,"cumple")
 actualizarBarra(cumple)
@@ -43,11 +49,6 @@ document.getElementById("mensajeCumple").innerText="FELIZ CUMPLEAÑOS ARIANAAAAA
 
 document.getElementById("gifCumple").innerHTML='<img src="images/cumple.gif">'
 
-// MOSTRAR BOTÓN
-const btn = document.getElementById("btnSorpresa")
-if(btn){
-btn.style.display = "inline-block"
-}
 
 }
 
